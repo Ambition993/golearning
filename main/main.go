@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	filePath := "C:/Users/Ambition/.gradle/caches/transforms-2/files-2.1/e2041232485bdf4d2a09c36930218fc5/lifecycle-runtime-2.1.0/R.txt"
+	filePath := ""
 	file, err := os.Open(filePath)
 	if err != nil {
 		fmt.Println(err)
