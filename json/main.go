@@ -9,6 +9,7 @@ import (
 func main() {
 	testStruct()
 	testMap()
+	testSlice()
 }
 
 type Monster struct {
@@ -38,6 +39,15 @@ func testMap() {
 	m["hello"] = 1
 	m["nihao"] = 2
 	data, err := json.Marshal(m)
+	if err != nil {
+		fmt.Println("err")
+	}
+	fmt.Println(string(data))
+}
+func testSlice() {
+	slice := make([]int, 3)
+	slice = append(slice, 1, 2, 34)
+	data, err := json.Marshal(slice)
 	if err != nil {
 		fmt.Println("err")
 	}
