@@ -10,6 +10,7 @@ func main() {
 	testStruct()
 	testMap()
 	testSlice()
+	unMarshal()
 }
 
 type Monster struct {
@@ -20,6 +21,18 @@ type Monster struct {
 	Skill    string  `json:"skill"`
 }
 
+func unMarshal() {
+	str := testMap()
+	var m map[string]interface{}
+	//反序列化的时候不需要make操作
+	//已经封装了这个操作了
+
+	err := json.Unmarshal([]byte(str), &m)
+	if err != nil {
+		fmt.Println("err")
+	}
+	fmt.Println(m)
+}
 func testStruct() {
 	monster := Monster{
 		"haha",
@@ -34,7 +47,7 @@ func testStruct() {
 	}
 	fmt.Println(string(data))
 }
-func testMap() {
+func testMap() string {
 	m := make(map[string]int)
 	m["hello"] = 1
 	m["nihao"] = 2
@@ -43,6 +56,7 @@ func testMap() {
 		fmt.Println("err")
 	}
 	fmt.Println(string(data))
+	return string(data)
 }
 func testSlice() {
 	slice := make([]int, 3)
