@@ -13,11 +13,11 @@ func main() {
 }
 
 type Monster struct {
-	Name     string
-	Age      int
-	Brithday string
-	Sal      float64
-	Skill    string
+	Name     string  `json:"name"`
+	Age      int     `json:"age"`
+	Brithday string  `json:"brithday"`
+	Sal      float64 `json:"sal"`
+	Skill    string  `json:"skill"`
 }
 
 func testStruct() {
