@@ -22,7 +22,7 @@ func main() {
 		if !ok {
 			break
 		}
-		fmt.Printf("res is %v\n", val)
+		fmt.Printf("res is %v", val)
 	}
 }
 
